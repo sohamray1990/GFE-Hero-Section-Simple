@@ -1,0 +1,246 @@
+/* Put any custom CSS styles here.  */
+/* Be sure to delete the <style> tag in index.html if you want to use this stylesheet. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  min-height: 100vh;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: linear-gradient(147.52deg, #f9fafb 8.89%, #d2d6db 100.48%);
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  min-height: 812px; /* This is to make sure no scrolls appear by default */
+  padding: 0 16px;
+  width: 100%;
+}
+
+.hero-section {
+  display: grid;
+  gap: 32px;
+  grid-row-gap: 48px; 
+  grid-auto-columns: 1fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-areas:
+   'one one one one'
+   'two two two two';
+
+  background: linear-gradient(176.17deg, #f9fafb 0.94%, #edf0f3 316.54%);
+  box-shadow:
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  padding: 104px 12px; 
+}
+
+.hero-headline {
+  grid-area: one;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+}
+
+.hero-image {
+  grid-area: two;
+  object-fit: cover;
+}
+
+.headline-title {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 40px;
+  color: #171717;
+  margin-bottom: 16px;
+}
+
+.headline-bio {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #525252;
+}
+
+.headline-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.headline-actions-btn {
+  flex: 1 1 0%;
+}
+
+/* Generic Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 500;
+  border: none;
+  background: none;
+  outline: inherit;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  width: 100%;
+}
+
+.btn:focus {
+  box-shadow: 0px 0px 0px 4px rgba(68, 76, 231, 0.12);
+}
+
+/* Size classes */
+.btn--size-xl-2xl {
+  height: 48px;
+  padding: 12px 20px;
+
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.btn--secondary.btn--size-xl-2xl {
+  padding: 11px 19px;
+}
+
+/* Button variants - primary, secondary */
+.btn--primary {
+  background: #4338ca;
+  box-shadow:
+    0px 1px 3px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.06);
+  color: #ffffff;
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  background: #3730a3;
+}
+
+.btn--primary:disabled,
+.btn--secondary:disabled {
+  background: #f5f5f5;
+  box-shadow: none;
+  color: #a3a3a3;
+  pointer-events: none;
+}
+
+.btn--secondary {
+  border: 0.5px solid #e6e6e6;
+  background: #ffffff;
+  box-shadow:
+    0px 1px 3px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.06);
+  color: #171717;
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background: #fafafa;
+  border: 1px solid #e6e6e6;
+  color: #0a0a0a;
+}
+
+.btn--secondary:focus {
+  box-shadow: 0px 0px 0px 4px rgba(68, 76, 231, 0.12);
+}
+
+/* Styles for tablet */
+@media screen and (min-width: 768px) {
+  .container {
+    min-height: 1440px;
+    padding: 0 32px;
+    width: 100%;
+  }
+
+  .hero-section {
+    grid-row-gap: 32px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-areas:
+   'one one one one one one one'
+   'two two two two two two two';
+  }
+
+  .hero-headline {
+    gap: 64px;
+  }
+
+  .headline-title {
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 24px;
+  }
+
+  .headline-bio {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .headline-actions {
+    justify-content: flex-start;
+    gap: 32px;
+  }
+
+  .headline-actions-btn {
+    width: 213px;
+    flex: none;
+  }
+
+  .button--size-xl-2xl {
+    height: 60px;
+    padding: 16px 24px;
+
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .button--secondary.button--size-xl-2xl {
+    padding: 11px 19px;
+  }
+}
+
+/* Styles for desktop */
+@media screen and (min-width: 1440px) {
+  .container {
+    margin: 0 auto;
+    min-height: 768px; 
+    padding: 0 32px;
+    width: 1280px;
+  }
+
+  .hero-section {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-areas:
+     'one one one one one two two two two two two two';
+  }
+
+  .headline-title {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .headline-actions-btn {
+    width: 175.5px;
+    flex: none;
+  }
+
+  
+}
